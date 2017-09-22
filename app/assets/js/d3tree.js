@@ -45,18 +45,18 @@ root = masterData;
 root.x0 = height / 2;
 root.y0 = 0;
 
-function expand(d){   
+function expand(d){
     let children = (d.children) ? d.children : d._children;
-    if (d._children) {        
+    if (d._children) {
         d.children = d._children;
-        d._children = null;       
+        d._children = null;
     }
     if (children)
       children.forEach(expand);
 }
 
 function expandAll(){
-    expand(root); 
+    expand(root);
     update(root);
 }
 
@@ -84,18 +84,23 @@ let originate;
 
 function linkLines(linkData) {
   d3.select(this).style("fill", "#42f4aa")
+  d3_target = d3.select(this)
 
-  let originX = coordinates[d3.select(this).text()].place[1]
-  let originY = coordinates[d3.select(this).text()].place[0]
+  let originX = d3_target[0][0].__data__.y;
+  let originY = d3_target[0][0].__data__.x;
+
 
   originate = d3.select(this).text();
 
   links.forEach(link => {
     if (d3.select(this).text() === link) {
+      //console.log(routeLinks);
       routeLinks[link].forEach(el => {
         if (coordinates[el]) {
           let destX = coordinates[el].place[1];
           let destY = coordinates[el].place[0];
+          //console.log(destX);
+
           let thisId = "#" + el;
 
           d3.select(thisId + " circle").transition().duration(1200).style("fill", "red");
@@ -257,8 +262,10 @@ d3.select("body").on('contextmenu', function (d, i) {
   } else {
     d3_target = d3.select(d3.event.target);
     if (d3_target.classed("text")) {
-      let originX = coordinates[d3_target.text()].place[1];
-      let originY = coordinates[d3_target.text()].place[0];
+      console.log('d3', d3_target);
+
+      let originX = d3_target[0][0].__data__.y;
+      let originY = d3_target[0][0].__data__.x;
 
       if (originX <= 85) {
         originX = "0px";

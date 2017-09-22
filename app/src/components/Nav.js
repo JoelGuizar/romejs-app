@@ -15,10 +15,13 @@ class Nav extends Component {
   }
 
   clickHandler() {
+    if(!this.props.filename){
+      return;
+    }
     this.props.fileParser(this.props.filename);
   }
   render() {
-    
+
       let props = this.props;
       console.log('listener added');
       $('.node-tree').on('click', function(e) {

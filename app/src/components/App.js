@@ -71,9 +71,13 @@ class App extends Component {
   }
 
   selectedFile(file) {
-    this.setState({
-      filename: this.state.filepath + '/' + file
-    })
+
+    if (!fs.lstatSync(filename).isDirectory()) {
+      this.setState({
+        filename: this.state.filepath + '/' + file
+      })
+    }
+
   }
 
   render() {

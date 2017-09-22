@@ -1,42 +1,54 @@
 const data = {
   "components": {
-    "name": "index",
+    "name": "App",
     "children": [
       {
-        "name": "App",
+        "name": "Container"
+      },
+      {
+        "name": "Fuck",
         "children": [
           {
-            "name": "Home"
+            "name": "Puckpuck"
           },
           {
-            "name": "Graph"
-          },
-          {
-            "name": "Dashboard"
-          },
-          {
-            "name": "Blank"
-          },
-          {
-            "name": "Nav"
+            "name": "Container"
           }
         ]
+      },
+      {
+        "name": "Shit"
+      },
+      {
+        "name": "Hotdamn"
+      },
+      {
+        "name": "Compo2"
+      },
+      {
+        "name": "Comp3"
       }
     ]
   },
   "filepaths": {
-    "App": "/Users/Michael/Desktop/Old Desktop/RomeJS/app/src/components/App",
-    "Home": "/Users/Michael/Desktop/Old Desktop/RomeJS/app/src/components/Home",
-    "Graph": "/Users/Michael/Desktop/Old Desktop/RomeJS/app/src/components/Graph",
-    "Dashboard": "/Users/Michael/Desktop/Old Desktop/RomeJS/app/src/components/Dashboard",
-    "Blank": "/Users/Michael/Desktop/Old Desktop/RomeJS/app/src/components/Blank",
-    "Nav": "/Users/Michael/Desktop/Old Desktop/RomeJS/app/src/components/Nav"
+    "Container": "/Users/joelguizar/Desktop/rome-js-master/reactapp2/src/Components/Container",
+    "Fuck": "/Users/joelguizar/Desktop/rome-js-master/reactapp2/src/Components/Fuck",
+    "Puckpuck": "/Users/joelguizar/Desktop/rome-js-master/reactapp2/src/Components/puckpuck",
+    "Shit": "/Users/joelguizar/Desktop/rome-js-master/reactapp2/src/Components/Shit",
+    "Hotdamn": "/Users/joelguizar/Desktop/rome-js-master/reactapp2/src/Components/Hotdamn",
+    "Compo2": "/Users/joelguizar/Desktop/rome-js-master/reactapp2/src/Compo2",
+    "Comp3": "/Users/joelguizar/Desktop/rome-js-master/reactapp2/src/folder1/folder2/Comp3"
   },
-  "entry": "/Users/Michael/Desktop/Old Desktop/RomeJS/app/src/index.js",
+  "entry": "/Users/joelguizar/Desktop/rome-js-master/reactapp2/src/App.js",
   "linkedComponents": {
-    "Nav": [
-      "Graph",
-      "Blank"
+    "Fuck": [
+      "Container"
+    ],
+    "Shit": [
+      "Container"
+    ],
+    "Hotdamn": [
+      "Container"
     ]
   }
 }
